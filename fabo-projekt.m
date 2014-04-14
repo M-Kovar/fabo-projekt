@@ -7,6 +7,7 @@ clc
 % obr = im2double(obr);
 % obr = rgb2gray(obr);
 
+%jen zkousim jak ta pejcovina funguje - bez diakritiky 
 imR = imread('obrazek32.jpg');
 imR = rgb2gray(imR);
 imR = im2double(imR);
