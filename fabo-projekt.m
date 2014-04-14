@@ -3,18 +3,18 @@ close all
 clc
 
 %% nacteni obrazu
-% obr = imread('Obrázek31.jpg');
+% obr = imread('obrazek31.jpg');
 % obr = im2double(obr);
 % obr = rgb2gray(obr);
 
-imR = imread('Obrázek32.jpg');
+imR = imread('obrazek32.jpg');
 imR = rgb2gray(imR);
 imR = im2double(imR);
-imG = imread('Obrázek30.jpg');
+imG = imread('obrazek30.jpg');
 imG = rgb2gray(imG);
 imG = im2double(imG);
 imG = [imG,zeros(531,1)];
-imB = imread('Obrázek31.jpg');
+imB = imread('obrazek31.jpg');
 imB = rgb2gray(imB);
 imB = im2double(imB);
 
@@ -81,14 +81,14 @@ figure
 imshow(label2rgb(bwl,'jet','w'))
 title('bunky s labely')
 
-imR = imread('Obrázek32.jpg');
+imR = imread('obrazek32.jpg');
 imR = rgb2gray(imR);
 imR = im2double(imR);
-imG = imread('Obrázek30.jpg');
+imG = imread('obrazek30.jpg');
 imG = rgb2gray(imG);
 imG = im2double(imG);
 imG = [imG,zeros(531,1)];
-imB = imread('Obrázek31.jpg');
+imB = imread('obrazek31.jpg');
 imB = rgb2gray(imB);
 imB = im2double(imB);
 
