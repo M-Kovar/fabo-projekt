@@ -1,6 +1,3 @@
-% 12 Stanovení intenzity fluorescence nádorových bunìk
-% Segmentace bunìk (prahování, watershed), stanovení prùmìrné intenzity v jednotlivých buòkách
-%% inicializace
 clear all
 close all
 clc
@@ -10,26 +7,33 @@ clc
 % obr = im2double(obr);
 % obr = rgb2gray(obr);
 
+%jen zkousim jak ta pejcovina funguje - bez diakritiky 
 imR = imread('obrazek32.jpg');
 imR = rgb2gray(imR);
 imR = im2double(imR);
-
 imG = imread('obrazek30.jpg');
 imG = rgb2gray(imG);
 imG = im2double(imG);
-imG = [imG,zeros(531,1)];       % pridani radku nul, aby rozmery odpovidaly zbyvajicim obrazum
-
+imG = [imG,zeros(531,1)];
 imB = imread('obrazek31.jpg');
 imB = rgb2gray(imB);
 imB = im2double(imB);
 
-%% upravy obrazu, detekce bunek na bazi fluorescence
-
-obr3(:,:,1) = imR;      
+obr3(:,:,1) = imR;
 obr3(:,:,2) = imG;
 obr3(:,:,3) = imB;
 
+% close all
+
+% obr = mean(obr3,3);
+% figure
+% imshow(obr,[])
+% 
 obr = max(obr3,[],3);
+% figure
+% imshow(obr,[])
+
+
 
 obr = histeq(obr);          % ekvalizace histogramu
 
@@ -89,6 +93,8 @@ imB = imread('obrazek31.jpg');
 imB = rgb2gray(imB);
 imB = im2double(imB);
 
+
+
 means = [];
 for n = 1:max(max(bwl))
 %     tempR
@@ -99,6 +105,11 @@ for n = 1:max(max(bwl))
              n, meanR, meanG, meanB];
 end
 
+
 figure
 bar(means(:,2:4),'stacked');
 title('Stack')
+
+% ostranit okrajove bunky?
+% nevadi prevod na sedotonovy?
+% vyresit nacitani TIFFu
