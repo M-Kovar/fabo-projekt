@@ -38,7 +38,7 @@ subplot(221)
 imshow(obr);
 title('originalni obraz')
 
-bw = im2bw(obr,0.5);        % prahovani obrazu
+bw = im2bw(obr,0.55);        % prahovani obrazu
 
 subplot(222)
 imshow(bw);
