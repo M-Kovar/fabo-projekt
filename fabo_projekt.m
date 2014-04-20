@@ -53,7 +53,7 @@ title('vyhlazene hrany')
 
 bwd = -bwdist(~bw);         % vytvoreni distancni mapy
 
-h = fspecial('gaussian',[10 10],5); 
+h = fspecial('gaussian',[15 15],5); 
 bwd = filter2(h, bwd);
 
 
