@@ -6,7 +6,7 @@ Segmentace buněk (prahování, watershed), stanovení průměrné intenzity v j
 Ukoly:
 
 - vylepsit segmentaci
-- vyresit nacitani TIFFu
+- vymyslet zpusob vizualizace
 
 Otazky:
 
