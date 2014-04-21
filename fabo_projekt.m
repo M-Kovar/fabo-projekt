@@ -10,7 +10,7 @@ clc
 % obr = im2double(obr);
 % obr = rgb2gray(obr);
 
-%%Obrázek 1
+%%Obrï¿½zek 1
 
 % imR = imread('obrazek32.tif');
 % if size(imR,3)==4, imR = imR(:,:,1:3); end    % Umazani 4. rozmeru tiffu
@@ -28,7 +28,7 @@ clc
 % imB = rgb2gray(imB);
 % imB = im2double(imB);
 
-%% Obrázek 2
+%% Obrï¿½zek 2
 imR = imread('obrazek36.tif');
 if size(imR,3)==4, imR = imR(:,:,1:3); end    % Umazani 4. rozmeru tiffu
 imR = rgb2gray(imR);
@@ -47,6 +47,19 @@ imB = im2double(imB);
 imB = imB(1:532,1:708);
 
 
+% Sjednoceni rozmeru obrazu:
+dims = zeros(3,2);
+dims(1,:) = size(imR);      % Ulozeni rozmeru vsech obrazu
+dims(2,:) = size(imG);
+dims(3,:) = size(imB);
+
+min_size = min(dims);       % Minimalni rozmery
+
+imR = imR(1:min_size(1),1:min_size(2));   % Oriznuti obrazu na minimalni rozmery
+imG = imG(1:min_size(1),1:min_size(2));
+imB = imB(1:min_size(1),1:min_size(2));
+
+
 %% upravy obrazu, detekce bunek na bazi fluorescence
 
 obr3(:,:,1) = imR;      
@@ -62,8 +75,8 @@ subplot(221)
 imshow(obr);
 title('originalni obraz')
 
-% bw = im2bw(obr,0.55);        % prahovani obrazu - první obraz
-bw = im2bw(obr,0.65);        % prahovani obrazu - druhý obraz
+% bw = im2bw(obr,0.55);        % prahovani obrazu - prvnï¿½ obraz
+bw = im2bw(obr,0.65);        % prahovani obrazu - druhï¿½ obraz
 
 subplot(222)
 imshow(bw);
