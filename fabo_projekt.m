@@ -25,13 +25,12 @@ imR = im2double(imR);
 % if size(imG,3)==4, imG = imG(:,:,1:3); end
 imG = rgb2gray(imG);
 imG = im2double(imG);
-imG = [imG,zeros(531,1)];       % pridani radku nul, aby rozmery odpovidaly zbyvajicim obrazum
+
 
 % imB = imread('obrazek31.tif');
 % if size(imB,3)==4, imB = imB(:,:,1:3); end
 imB = rgb2gray(imB);
 imB = im2double(imB);
-imB = imB(1:532,1:708);
 
 
 %% upravy obrazu, detekce bunek na bazi fluorescence

@@ -1,15 +1,17 @@
 fabo-projekt
 ============
-12 Stanovení intenzity fluorescence nádorových buněk
-Segmentace buněk (prahování, watershed), stanovení průměrné intenzity v jednotlivých buňkách
+12 Stanoveni intenzity fluorescence nadorovych bunek
+Segmentace bunek (prahovani, watershed), stanoveni prumerne intenzity v jednotlivych bunkach
 
 Ukoly:
 
 - vylepsit segmentaci
-- vyresit nacitani TIFFu
+- vymyslet zpusob vizualizace
+- vizualizovat v hodnotach 0-1 nebo 0-255
+
 
 Otazky:
 
 - ostranit okrajove bunky?
 - nevadi prevod na sedotonovy?
-
+- smazat objekty s plochou mensi nez 5% prumeru?
